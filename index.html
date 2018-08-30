@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css" />
+        <title>Tasks</title>
+    </head>
+
+    <body>
+
+        <div id="app" class="wrapper">
+
+            <div class="container-lg">
+                <div class="nav">
+
+                    <ul class="menu">
+                        <li>
+                            <a href="#">Todos(Tasks)</a>
+                        </li>
+                        <li>
+                            <a href="#">Reports</a>
+                        </li>
+                        <li>
+                            <a href="#">Bookmarks</a>
+                        </li>
+                        <li>
+                            <a href="#">Notes</a>
+                        </li>
+                    </ul>
+
+                    <ul class="menu">
+                        <li class="profile-photo">
+                            <a href="#">
+                                <ul>
+                                    <li>
+                                        <a href="#">Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Account</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Logout</a>
+                                    </li>
+                                </ul>
+                            </a>
+                        </li>
+                        <li class="notification">
+                            <a href="#">5</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container-lg">
+
+                <span @click="showForm('addTask')" class="add">
+                    <span class="icon" data-feather="plus-circle"></span>
+                    <span class="label">Add New</span>
+                </span>
+
+                <div class="todo-items">
+                    <div class="todo-item">
+                        <h2 class="todo-item-header">Title</h2>
+                        <div class="todo-item-footer">
+                            <div class="col-1">
+                                <span @click="showForm('addToTeam')"><span class="icon users" data-feather="users"></span></span>
+                                <span @click="showForm('addActivity')"><span class="icon clock" data-feather="clock"></span></span>
+                                <span @click="showForm('addMessage')"><span class="icon message" data-feather="message-circle"></span></span>
+                                <span @click="showForm('addFile')"><span class="icon archive" data-feather="archive"></span></span>
+                                <span @click="showForm('extend')"><span class="icon repeat" data-feather="repeat"></span></span>
+                            </div>
+                            <div class="col-2">
+                                <span @click="editTask(1)"><span class="icon edit" data-feather="edit"></span></span>
+                                <span @click="deleteTask(1)"><span class="icon delete" data-feather="delete"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="todo-item">
+                        <h2 class="todo-item-header">Title</h2>
+                        <div class="todo-item-footer">
+                            <div class="col-1">
+                                <span @click="showForm('addToTeam')">
+                                    <span class="icon users" data-feather="users"></span>
+                                </span>
+                                <span @click="showForm('addActivity')">
+                                    <span class="icon clock" data-feather="clock"></span>
+                                </span>
+                                <span @click="showForm('addMessage')">
+                                    <span class="icon message" data-feather="message-circle"></span>
+                                </span>
+                                <span @click="showForm('addFile')">
+                                    <span class="icon archive" data-feather="archive"></span>
+                                </span>
+                                <span @click="showForm('extend')">
+                                    <span class="icon repeat" data-feather="repeat"></span>
+                                </span>
+                            </div>
+                            <div class="col-2">
+                                <span @click="editTask(1)">
+                                    <span class="icon edit" data-feather="edit"></span>
+                                </span>
+                                <span @click="deleteTask(1)">
+                                    <span class="icon delete" data-feather="delete"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="todo-item">
+                        <h2 class="todo-item-header">Title</h2>
+                        <div class="todo-item-footer">
+                            <div class="col-1">
+                                <span class="icon users" data-feather="users"></span>
+                                <span class="icon clock" data-feather="clock"></span>
+                                <span class="icon message" data-feather="message-circle"></span>
+                                <span class="icon archive" data-feather="archive"></span>
+                                <span class="icon repeat" data-feather="repeat"></span>
+                            </div>
+                            <div class="col-2">
+                                <span class="icon edit" data-feather="edit"></span>
+                                <span class="icon delete" data-feather="delete"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="todo-item">
+                        <h2 class="todo-item-header">Title</h2>
+                        <div class="todo-item-footer">
+                            <div class="col-1">
+                                <span class="icon users" data-feather="users"></span>
+                                <span class="icon clock" data-feather="clock"></span>
+                                <span class="icon message" data-feather="message-circle"></span>
+                                <span class="icon archive" data-feather="archive"></span>
+                                <span class="icon repeat" data-feather="repeat"></span>
+                            </div>
+                            <div class="col-2">
+                                <span class="icon edit" data-feather="edit"></span>
+                                <span class="icon delete" data-feather="delete"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="todo-item">
+                        <h2 class="todo-item-header">Title</h2>
+                        <div class="todo-item-footer">
+                            <div class="col-1">
+                                <span class="icon users" data-feather="users"></span>
+                                <span class="icon clock" data-feather="clock"></span>
+                                <span class="icon message" data-feather="message-circle"></span>
+                                <span class="icon archive" data-feather="archive"></span>
+                                <span class="icon repeat" data-feather="repeat"></span>
+                            </div>
+                            <div class="col-2">
+                                <span class="icon edit" data-feather="edit"></span>
+                                <span class="icon delete" data-feather="delete"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <input type="submit" @click="onSubmit()" value="Submit" class="btn success" />
+
+            </div>
+
+            <div class="panel-wrapper right-panel">
+                <div class="panel-header">
+                    <span id="panel-header-text">Heading</span>
+                    <span @click="closePanel()" id="closeBtn">
+                        <span data-feather="x"></span>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <span>Loading...</span>
+                </div>
+                <div class="panel-footer">
+                    Footer
+                </div>
+            </div>
+            <div id="addTask">
+                <div class="form">
+                    <div class="form-body">
+                        <form action="#">
+                            <input type="text" class="form-element" placeholder="Name" />
+                            <input type="text" class="form-element" placeholder="Last name..." />
+                            <textarea class="form-element" placeholder="Description"></textarea>
+
+                            <input type="date" class="form-element" placeholder="Date start" />
+                            <input type="date" class="form-element" placeholder="Date end" />
+
+                            <select class="form-element">
+                                <option value="-">-Select Client-</option>
+                                <option value="1">Gagawala Graphics Limited</option>
+                            </select>
+
+                            <input type="submit" @click="onSubmit()" value="Submit" class="btn success" />
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="addFiles">
+                <div class="form">
+                    <div class="form-body">
+                        <form action="#">
+                            <input type="file" class="form-element" />
+                            <input type="submit" value="Submit" class="btn success" />
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="addTeamMate">
+                <div class="form">
+                    <div class="form-body">
+                        <form action="#">
+                            <select class="form-element">
+                                <option value="-">-Select member-</option>
+                                <option value="1">Calvin</option>
+                                <option value="2">Treasure</option>
+                            </select>
+                            <input type="type" class="form-element" placeholder="Role" />
+                            <input type="submit" value="Submit" class="btn success" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="chat">
+                <div class="form">
+                    <div class="form-body">
+                        <div class="msgs">
+                            <p>
+                                <strong>Sender 1</strong>
+                                <i>When are you getting done?</i>
+                            </p>
+                            <p>
+                                <strong>Sender 2</strong>
+                                <i>In one hour?</i>
+                            </p>
+                        </div>
+                        <form action="#">
+                            <textarea class="form-element" placeholder="message"></textarea>
+                            <input type="submit" value="Send" class="btn success" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="addActivity">
+                <div class="form">
+                    <div class="form-body">
+                        <form action="#">
+                            <select class="form-element">
+                                <option value="-">-Select status-</option>
+                                <option value="1">Completed</option>
+                                <option value="2">Postpone</option>
+                                <option value="3">Cancled</option>
+                                <option value="4">Rejected</option>
+                            </select>
+                            <textarea class="form-element" placeholder="Comments"></textarea>
+                            <input type="text" class="form-element" placeholder="Resume date and time" />
+                            <input type="submit" value="Submit" class="btn success" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/vue.min.js"></script>
+        <script src="js/feather.min.js"></script>
+        <script>
+            feather.replace({
+                'stroke-width': 1,
+                'width': 20,
+                'height': 20
+            })
+            feather.icons['plus-circle'].toSvg({
+                'width': 36,
+                'height':36
+            })
+        </script>
+        <script src="js/textarea-auto-resize.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+
+</html>
